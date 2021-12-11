@@ -1,9 +1,10 @@
-import { Button, ButtonVariants } from '@/components/Button';
+import { useFonts, Roboto_500Medium } from '@expo-google-fonts/roboto';
+import { Ionicons } from '@expo/vector-icons';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
-import { useFonts, Roboto_500Medium } from '@expo-google-fonts/roboto';
+
+import { Button, ButtonVariants } from '@/components/Button';
 
 export default function App() {
   const [fontsLoaded] = useFonts({

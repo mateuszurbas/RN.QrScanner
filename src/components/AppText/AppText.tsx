@@ -8,7 +8,7 @@ type Props = {
   children: ReactNode;
 };
 
-const AppText = ({ children, style }: Props) => {
+const AppText = function ({ children, style }: Props) {
   return <Text style={[styles.text, style]}>{children}</Text>;
 };
 

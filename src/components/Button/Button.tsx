@@ -1,8 +1,9 @@
 import React, { memo, ReactNode } from 'react';
 import { StyleProp, TouchableOpacity, View, ViewStyle } from 'react-native';
 
-import styles from './styles';
 import { AppText } from '../AppText';
+
+import styles from './styles';
 
 export enum ButtonVariants {
   primary = 'primary',
@@ -11,7 +12,7 @@ export enum ButtonVariants {
 
 type Props = {
   label: string;
-  onPress: VoidFunction;
+  onPress: () => void;
   variant?: ButtonVariants;
   icon?: ReactNode;
   disabled?: boolean;
