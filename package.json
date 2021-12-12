@@ -8,7 +8,11 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "test": "jest --watchAll"
+  },
+  "jest": {
+    "preset": "jest-expo"
   },
   "dependencies": {
     "@expo-google-fonts/roboto": "^0.2.0",
@@ -24,8 +28,11 @@
     "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.16.3",
     "@react-native-community/eslint-config": "^3.0.1",
+    "@testing-library/react-native": "^9.0.0",
+    "@types/jest": "^27.0.3",
     "@types/react": "~17.0.21",
     "@types/react-native": "~0.64.12",
+    "@types/react-test-renderer": "^17.0.1",
     "babel-plugin-module-resolver": "^4.1.0",
     "eslint": "^7.32.0",
     "eslint-import-resolver-alias": "^1.1.2",
@@ -33,8 +40,11 @@
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react-native-a11y": "^3.0.0",
+    "jest-expo": "^43.0.1",
     "prettier": "^2.5.1",
-    "typescript": "~4.3.5"
+    "react-test-renderer": "^17.0.2",
+    "typescript": "~4.3.5",
+    "yarn": "^1.22.17"
   },
   "private": true
 }
