@@ -7,4 +7,5 @@ export enum Dict {
   cameraPermission = 'Requesting for camera permission',
   qrCodeInfo = 'Proszę ustawić aparat w kierunku kodu QR!',
   cancel = 'Anuluj',
+  // Personal Data Screen
 }
