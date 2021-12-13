@@ -5,7 +5,7 @@ import { MainStackRoutes } from '@/navigation/routes';
 import { StartScreen } from '@/screens/StartScreen';
 
 export type MainStackParamList = {
-  [MainStackRoutes.Start]: undefined;
+  [key in MainStackRoutes]: undefined;
 };
 
 const { Navigator, Screen } = createNativeStackNavigator<MainStackParamList>();
