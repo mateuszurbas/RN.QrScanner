@@ -1,5 +1,10 @@
-import React from 'react';
-import { View } from 'react-native';
+import React, { useEffect } from 'react';
+import Animated, {
+  Easing,
+  useAnimatedStyle,
+  useSharedValue,
+  withTiming,
+} from 'react-native-reanimated';
 
 import { AppText } from '@/components/AppText';
 import { Dict } from '@/constants/dictionary';
@@ -12,20 +17,39 @@ type Props = {
 };
 
 function PersonalDataResult({ data }: Props) {
+  const yOffset = useSharedValue(200);
+
+  const animatedStyles = useAnimatedStyle(() => {
+    return {
+      transform: [{ translateY: yOffset.value }],
+    };
+  });
+
+  useEffect(() => {
+    yOffset.value = withTiming(data ? 0 : 200, {
+      duration: 1000,
+      easing: Easing.out(Easing.exp),
+    });
+  }, [data, yOffset]);
+
   return (
-    <View style={styles.personalDataResult}>
+    <Animated.View style={[styles.personalDataResult, animatedStyles]}>
+      <AppText style={styles.formInfoText}>{Dict.formResult}</AppText>
+
       {data ? (
         <>
-          <AppText>
+          <AppText style={styles.formResultItem}>
             {Dict.nameLabel}: {data.name}
           </AppText>
-          <AppText>
+          <AppText style={styles.formResultItem}>
             {Dict.surnameLabel}: {data.surname}
           </AppText>
-          <AppText>Checkbox: {String(data.terms)}</AppText>
+          <AppText style={styles.formResultItem}>
+            Checkbox: {String(data.terms)}
+          </AppText>
         </>
       ) : null}
-    </View>
+    </Animated.View>
   );
 }
 

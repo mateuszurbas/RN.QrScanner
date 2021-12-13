@@ -53,40 +53,42 @@ const PersonalDataScreen = () => {
   };
 
   return (
-    <KeyboardAvoidingView
-      style={styles.container}
-      behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
-      <ScrollView>
-        <PersonalDataResult data={formData} />
-        <Input
-          control={control}
-          name={'name'}
-          label={Dict.nameLabel}
-          placeholder={Dict.namePlaceholder}
-          error={errors.name?.message}
-          key={'name'}
-          rules={commonRules}
-        />
-        <Input
-          control={control}
-          name={'surname'}
-          label={Dict.surnameLabel}
-          placeholder={Dict.surnamePlaceholder}
-          error={errors.surname?.message}
-          key={'surname'}
-          rules={commonRules}
-        />
-        <Checkbox
-          control={control}
-          name={'terms'}
-          label={Dict.personalData}
-          error={errors.terms?.message}
-          rules={{ required: commonRules.required }}
-        />
-        <Button label={Dict.sendForm} onPress={handleSubmit(onSubmit)} />
-      </ScrollView>
-      <StatusBar style="auto" />
-    </KeyboardAvoidingView>
+    <>
+      <KeyboardAvoidingView
+        style={styles.container}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+        <ScrollView>
+          <Input
+            control={control}
+            name={'name'}
+            label={Dict.nameLabel}
+            placeholder={Dict.namePlaceholder}
+            error={errors.name?.message}
+            key={'name'}
+            rules={commonRules}
+          />
+          <Input
+            control={control}
+            name={'surname'}
+            label={Dict.surnameLabel}
+            placeholder={Dict.surnamePlaceholder}
+            error={errors.surname?.message}
+            key={'surname'}
+            rules={commonRules}
+          />
+          <Checkbox
+            control={control}
+            name={'terms'}
+            label={Dict.personalData}
+            error={errors.terms?.message}
+            rules={{ required: commonRules.required }}
+          />
+          <Button label={Dict.sendForm} onPress={handleSubmit(onSubmit)} />
+          <StatusBar style="auto" />
+        </ScrollView>
+      </KeyboardAvoidingView>
+      <PersonalDataResult data={formData} />
+    </>
   );
 };
 

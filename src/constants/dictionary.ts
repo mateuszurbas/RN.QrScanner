@@ -17,4 +17,5 @@ export enum Dict {
   sendForm = 'Wyślij formularz',
   notEnoughCharacters = 'Pole musi mieć conajmniej 3 litery',
   toManyCharacters = 'Pole moze mieć maksymalnie 50 liter',
+  formResult = 'Wynik formularza',
 }
