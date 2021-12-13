@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { RegisterOptions, useForm } from 'react-hook-form';
-import { ScrollView, View } from 'react-native';
+import { KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
 
 import { Button } from '@/components/Button';
 import { Checkbox } from '@/components/Checkbox';
@@ -53,7 +53,9 @@ const PersonalDataScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView
+      style={styles.container}
+      behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
       <ScrollView>
         <PersonalDataResult data={formData} />
         <Input
@@ -84,7 +86,7 @@ const PersonalDataScreen = () => {
         <Button label={Dict.sendForm} onPress={handleSubmit(onSubmit)} />
       </ScrollView>
       <StatusBar style="auto" />
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 
