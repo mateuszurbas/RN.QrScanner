@@ -1,13 +1,14 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
 import { Colors } from '@theme/colors';
 
 const styles = StyleSheet.create({
   checkboxContainer: {
-    alignItems: 'flex-start',
-    display: 'flex',
+    paddingVertical: Platform.OS === 'ios' ? 14 : 0,
+    marginTop: 12,
+    marginBottom: 25,
+    alignItems: 'center',
     flexDirection: 'row',
-    marginVertical: 25,
   },
   box: {
     width: 20,
@@ -25,7 +26,7 @@ const styles = StyleSheet.create({
   errorText: {
     position: 'absolute',
     fontSize: 10,
-    top: 50,
+    bottom: 15,
     color: Colors.red,
   },
 });
