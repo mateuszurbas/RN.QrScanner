@@ -14,12 +14,26 @@ const styles = StyleSheet.create({
   separator: {
     marginBottom: 40,
   },
-  scanResult: {
+  scanResultContainer: {
     position: 'absolute',
-    top: 40,
-    maxHeight: 300,
-    marginBottom: 20,
+    top: 0,
+    height: 250,
+    width: '100%',
     paddingHorizontal: 16,
+    backgroundColor: '#f5f5f5',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+  },
+  scanResultText: {
+    marginTop: 50,
+    textAlign: 'center',
+    marginBottom: 20,
+    color: Colors.blue,
   },
   modalContainer: {
     flex: 1,
