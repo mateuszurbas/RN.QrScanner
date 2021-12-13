@@ -3,7 +3,7 @@ import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { SafeAreaView, View } from 'react-native';
+import { View } from 'react-native';
 
 import { Button, ButtonVariants } from '@/components/Button';
 import { Dict } from '@/constants/dictionary';
@@ -25,7 +25,7 @@ const StartScreen = () => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <View style={styles.content}>
         <BarCodeResult data={scannerData} />
         <Button
@@ -51,7 +51,7 @@ const StartScreen = () => {
         />
         <StatusBar style="auto" />
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 
