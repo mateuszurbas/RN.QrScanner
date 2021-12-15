@@ -65,24 +65,24 @@ function BarCodeScannerModal({
       transparent={true}
       animationType="fade"
       onRequestClose={toggleModal}>
-      <View style={styles.modalContainer}>
-        {hasPermission && (
-          <>
-            <AppText style={styles.barCodeScannerInfoText}>
-              {Dict.qrCodeInfo}
-            </AppText>
+      {isModalVisible && (
+        <View style={styles.modalContainer}>
+          <AppText style={styles.barCodeScannerInfoText}>
+            {Dict.qrCodeInfo}
+          </AppText>
+          {hasPermission && (
             <BarCodeScanner
               onBarCodeScanned={scanned ? undefined : handleScanedResult}
               style={styles.barCodeScanner}
             />
-          </>
-        )}
-        <Button
-          label={Dict.cancel}
-          onPress={toggleModal}
-          style={styles.cancelScannerButton}
-        />
-      </View>
+          )}
+          <Button
+            label={Dict.cancel}
+            onPress={toggleModal}
+            style={styles.cancelScannerButton}
+          />
+        </View>
+      )}
     </Modal>
   );
 }
