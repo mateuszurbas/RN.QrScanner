@@ -17,7 +17,7 @@ type Props = {
 };
 
 function BarCodeResult({ data }: Props) {
-  const yOffset = useSharedValue(0);
+  const yOffset = useSharedValue(-250);
 
   const animatedStyles = useAnimatedStyle(() => {
     return {
