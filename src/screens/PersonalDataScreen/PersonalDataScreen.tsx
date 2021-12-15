@@ -66,6 +66,7 @@ const PersonalDataScreen = () => {
             error={errors.name?.message}
             key={'name'}
             rules={commonRules}
+            testID="input.name"
           />
           <Input
             control={control}
@@ -75,6 +76,7 @@ const PersonalDataScreen = () => {
             error={errors.surname?.message}
             key={'surname'}
             rules={commonRules}
+            testID="input.surname"
           />
           <Checkbox
             control={control}
