@@ -1,10 +1,14 @@
 import { Ionicons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { View } from 'react-native';
 
 import { Button, ButtonVariants } from '@/components/Button';
 import { Dict } from '@/constants/dictionary';
+import { MainStackParamList } from '@/navigation/MainStack/MainStack';
+import { MainStackRoutes } from '@/navigation/routes';
 import { Colors } from '@/theme/colors';
 
 import BarCodeResult from './BarCodeResult';
@@ -14,6 +18,7 @@ import styles from './styles';
 const StartScreen = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [scannerData, setScannerData] = useState<string>();
+  const navigation = useNavigation<StackNavigationProp<MainStackParamList>>();
 
   const handleBarCodeScanned = (data: string) => {
     setScannerData(data);
@@ -36,7 +41,7 @@ const StartScreen = () => {
           label={Dict.personalData}
           variant={ButtonVariants.secondary}
           onPress={() => {
-            console.error(Dict.actionCannotBePerformed);
+            navigation.navigate(MainStackRoutes.PersonalData);
           }}
         />
         <BarCodeScannerModal

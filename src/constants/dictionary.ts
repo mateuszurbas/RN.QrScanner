@@ -8,4 +8,14 @@ export enum Dict {
   qrCodeInfo = 'Proszę ustawić aparat w kierunku kodu QR!',
   cancel = 'Anuluj',
   scanResultText = 'Wynik skanu',
+  // Personal Data Screen
+  nameLabel = 'Imię',
+  namePlaceholder = 'Wprowadź imię',
+  requiredError = 'Pole jest wymagane',
+  surnameLabel = 'Nazwisko',
+  surnamePlaceholder = 'Wprowadź nazwisko',
+  sendForm = 'Wyślij formularz',
+  notEnoughCharacters = 'Pole musi mieć conajmniej 3 litery',
+  toManyCharacters = 'Pole moze mieć maksymalnie 50 liter',
+  formResult = 'Wynik formularza',
 }
